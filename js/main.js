@@ -40,4 +40,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 5000);
         }
     });
+
+    // Image modal functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const previewImages = document.querySelectorAll('.preview-image');
+
+    previewImages.forEach(img => {
+        img.addEventListener('click', () => {
+            modal.classList.add('active');
+            modalImg.src = img.src;
+        });
+    });
+
+    modal.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
 });
+
+function trackDownload(platform) {
+    // Optional: Add analytics tracking
+    console.log(`Download started for ${platform}`);
+    
+    // Let the default link behavior continue
+    return true;
+}

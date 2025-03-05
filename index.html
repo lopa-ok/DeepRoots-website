@@ -16,8 +16,8 @@
             <section class="section preview-section">
                 <h2 class="section-title">Game Preview</h2>
                 <div class="preview-grid">
-                    <img src="images/preview1.png" alt="Game Screenshot 1" class="preview-image">
-                    <img src="images/preview2.png" alt="Game Screenshot 2" class="preview-image">
+                    <img src="images/gameplay.gif" alt="Gameplay Preview" class="preview-image">
+                    <img src="images/gameplay2.gif" alt="Gameplay Preview 2" class="preview-image">
                     <img src="images/preview3.png" alt="Game Screenshot 3" class="preview-image">
                     <img src="images/preview4.png" alt="Game Screenshot 4" class="preview-image">
                 </div>
@@ -45,18 +45,20 @@
                         <div class="platform-icon">🪟</div>
                         <h3>Windows</h3>
                         <p>Beta v0.1.0</p>
-                        <a href="https://lopa-ok.itch.io/deep-roots/download/windows" 
+                        <a href="https://lopa-ok.itch.io/deep-roots?download" 
                            class="download-button" 
                            target="_blank"
+                           onclick="trackDownload('windows')"
                            rel="noopener">Download Beta</a>
                     </div>
                     <div class="download-card">
                         <div class="platform-icon">🍎</div>
                         <h3>macOS</h3>
                         <p>Beta v0.1.0</p>
-                        <a href="https://lopa-ok.itch.io/deep-roots/download/mac" 
+                        <a href="https://lopa-ok.itch.io/deep-roots?download" 
                            class="download-button"
                            target="_blank"
+                           onclick="trackDownload('mac')"
                            rel="noopener">Download Beta</a>
                     </div>
                     <div class="download-card disabled">
@@ -88,6 +90,10 @@
                 </div>
             </section>
         </div>
+    </div>
+    <!-- Add modal at the end of body -->
+    <div id="imageModal" class="modal">
+        <img id="modalImage" class="modal-content">
     </div>
 </body>
 </html>
