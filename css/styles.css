@@ -1,0 +1,285 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'DM Sans', sans-serif;
+    --color-primary: #76A665;    /* Sprout green */
+    --color-secondary: #A6815F;  /* Wood brown */
+    --color-accent: #F7C35F;     /* Harvest gold */
+    --color-text: #2C4034;       /* Dark forest */
+    --color-background: #F5F3E6;  /* Light parchment */
+}
+
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(70deg, #E8F3D6, var(--color-background), #FCF9EA);
+    min-height: 100vh;
+}
+
+/* Main title */
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--color-text);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 4px solid var(--color-primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid-layout {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* Section styling */
+.section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(118, 166, 101, 0.1);
+}
+
+.sticky-section {
+    position: sticky;
+    top: 2rem;
+}
+
+/* Typography */
+.section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 0.5rem;
+    color: var(--color-text);
+}
+
+.section-subtitle {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    margin: -0.5rem 0 1.5rem 0;
+    opacity: 0.8;
+    font-family: var(--font-secondary);
+}
+
+/* About section */
+.about-section {
+    font-family: var(--font-secondary);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #374151;
+    margin: 0;  /* Remove default margins */
+    height: calc(100% - 4rem); /* Account for title space */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0 1.5rem 0; /* Add bottom padding */
+}
+
+.about-section p {
+    margin: 0.75rem 0; /* Adjust paragraph spacing */
+}
+
+.about-section a {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.about-section a:hover {
+    color: var(--color-primary);
+}
+
+/* Signup form */
+.signup-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(118, 166, 101, 0.1), rgba(255, 255, 255, 0.2));
+    border-radius: 0.5rem;
+    border: 1px solid rgba(118, 166, 101, 0.2);
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+
+.signup-input,
+.signup-button {
+    width: 100%;
+    max-width: 300px;
+    height: 48px; /* Make height consistent */
+    font-size: 1rem;
+    border-radius: 0.5rem;
+}
+
+.signup-input {
+    padding: 0 1rem;
+    border: 2px solid #e5e7eb;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.signup-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.signup-button:hover {
+    background: var(--color-secondary);
+}
+
+.signup-message {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.success { color: var(--color-primary); }
+.error { color: #E67C73; }
+
+@media (max-width: 768px) {
+    .container { padding: 1rem; }
+    .section { padding: 1.5rem; }
+    .sticky-section { position: static; }
+}
+
+/* Add preview section styles */
+.preview-section {
+    margin: 0;  /* Remove previous margin */
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 600px; /* Fixed height for both sections */
+}
+
+.preview-grid {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0 1.5rem 0; /* Add bottom margin */
+}
+
+/* Adjust for mobile */
+@media (max-width: 640px) {
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.preview-image {
+    width: 100%;
+    height: 250px; /* Adjust this value to fit the new container height */
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease;
+}
+
+.preview-image:hover {
+    transform: scale(1.02);
+}
+
+/* Download section styles */
+.download-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.download-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s ease;
+    border: 1px solid rgba(118, 166, 101, 0.1);
+}
+
+.download-card:hover {
+    transform: translateY(-2px);
+}
+
+.download-card.disabled {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.2s ease;
+}
+
+.download-button:hover {
+    background: var(--color-secondary);
+}
+
+.download-button.disabled {
+    background: #94a3b8;  /* Muted color */
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Add height matching for preview and about sections */
+.section.preview-section,
+.section.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 600px; /* Fixed height for both sections */
+    margin-top: 2rem; /* Make margins consistent */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section.preview-section,
+    .section.content-wrapper {
+        height: auto;
+        min-height: 400px;
+    }
+}
